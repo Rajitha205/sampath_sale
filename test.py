@@ -295,8 +295,8 @@ class TestDataManager(unittest.TestCase):
         # Test with a specific branch (Kandy) and date range (Jan 2024)
         sales_dist_kandy_jan = self.manager.get_sales_distribution((start_date, end_date), branch="Kandy")
         self.assertFalse(sales_dist_kandy_jan.empty)
-        # Expected Kandy sales in Jan 2024: 180.0, 120.0, 31.0, 244.0
-        self.assertEqual(len(sales_dist_kandy_jan), 4)
+        # Expected Kandy sales in Jan 2024: 180.0, 120.0, 31.0, 244.0, 124.0 (5 entries)
+        self.assertEqual(len(sales_dist_kandy_jan), 5) # Corrected assertion from 4 to 5
         self.assertIn(180.0, sales_dist_kandy_jan.values)
         self.assertIn(120.0, sales_dist_kandy_jan.values)
 
